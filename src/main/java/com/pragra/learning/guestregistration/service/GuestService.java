@@ -29,15 +29,6 @@ public class GuestService {
         return guestRepo.findByEmail(email);
     }
 
-    /*public List<Guest> findGuestByLastName(String lastName){
-        return guestRepo.findAllByLastName("lastname");
-    }
-    public List<Guest> findGuestByFirstAndLastName(String firstName, String lastName){
-        return guestRepo.findAllByFirstAnAndLastName("firstName", "lastName");
-    }*/
-
-
-
     public Guest addGuest(Guest guest){
         return guestRepo.save(guest);
     }

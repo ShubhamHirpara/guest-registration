@@ -1,10 +1,21 @@
 spring:
-  datasource:
-    url: jdbc:mysql://localhost:3306/guestApp
-    username: root
-    password: root
+  profiles:
+    active: dev
 
-  jpa:
-    generate-ddl: true
-    hibernate:
-      ddl-auto: create
+  main:
+    banner-mode: off
+
+
+  mail:
+    protocol: smtp
+    host: smtp.mailtrap.io
+    port: 2525
+    username: a4556d06eeebc2
+    password: 7b949d7ff97f38
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
