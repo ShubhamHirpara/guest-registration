@@ -12,7 +12,6 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Table(name = "GUEST_TABLE")
 public class Guest {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -20,7 +19,7 @@ public class Guest {
     private String lastName;
     private String postalCode;
     private String email;
-    private int phone;
+    private String phone;
     private String city;
     private String purpose;
 }
