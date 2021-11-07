@@ -13,7 +13,7 @@ import java.util.List;
 public class GuestRegistration {
     private final GuestService guestService;
 
-    @PostMapping()
+    @PostMapping("/add")
     public String addGuest(@RequestBody Guest guest){
         Guest guest1 = null;
         guest1 = guestService.addGuest(guest);
@@ -31,5 +31,13 @@ public class GuestRegistration {
     @GetMapping("/phone")
     public List<Guest> getGuestFromPhone(@RequestParam("phone") String phone){
         return guestService.findByPhone(phone);
+    }
+
+    //return all the guests in the database
+    @GetMapping("/guestAll")
+    public List<Guest> fetchGuestList(){
+
+        return guestService.fetchGuestList();
+
     }
 }

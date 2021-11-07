@@ -29,8 +29,14 @@ public class GuestService {
         return guestRepo.findByEmail(email);
     }
 
+
     public Guest addGuest(Guest guest){
         return guestRepo.save(guest);
     }
 
+    public List<Guest> fetchGuestList() {
+
+        return guestRepo.findAll();
+
+    }
 }

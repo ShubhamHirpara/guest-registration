@@ -1,8 +1,10 @@
 spring:
   datasource:
-    url: jdbc:h2:./guestApp
-    username: sa
-    password:
+    url: jdbc:mysql://localhost:3306/guestApp
+    username: root
+    password: root
+
+
 
 #  jpa:
 #    generate-ddl: true
