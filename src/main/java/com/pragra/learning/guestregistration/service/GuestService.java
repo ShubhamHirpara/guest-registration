@@ -40,4 +40,16 @@ public class GuestService {
         return guestRepo.findAll();
     }
 
+    public List<Guest> fetchGuestList() {
+
+        return guestRepo.findAll();
+
+    }
+
+    public void deleteGuestById(Long id){
+
+        guestRepo.deleteById(id);
+    }
+
+
 }

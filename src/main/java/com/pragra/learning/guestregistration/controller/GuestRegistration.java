@@ -15,28 +15,37 @@ public class GuestRegistration {
     private final GuestService guestService;
     private final EmailService emailService;
 
-    @PostMapping()
-    public String addGuest(@RequestBody Guest guest){
+    @PostMapping("/add")
+    public String addGuest(@RequestBody Guest guest) {
         Guest guest1 = null;
         guest1 = guestService.addGuest(guest);
-        if(guest1!=null){
-            emailService.sendSimpleMessage(guest.getEmail(),guest.getFirstName()+" "+guest.getLastName(),guest.getPurpose());
+        if (guest1 != null) {
+            emailService.sendSimpleMessage(guest.getEmail(), guest.getFirstName() + " " + guest.getLastName(), guest.getPurpose());
             return "Guest added sucessfully";
         }
         return "Guest is not added sucessfully";
     }
 
     @GetMapping("/email")
-    public List<Guest> getGuestFromEmail(@RequestParam("email") String email){
+    public List<Guest> getGuestFromEmail(@RequestParam("email") String email) {
         return guestService.findByEmail(email);
     }
 
     @GetMapping("/phone")
-    public List<Guest> getGuestFromPhone(@RequestParam("phone") String phone){
+    public List<Guest> getGuestFromPhone(@RequestParam("phone") String phone) {
         return guestService.findByPhone(phone);
     }
+
     @GetMapping
-    public List<Guest> getAllGuest(){
+    public List<Guest> getAllGuest() {
         return guestService.findAll();
     }
+
+
+        // Add delete API here
+        public String deleteGuestById (Long id){
+
+            guestService.deleteGuestById(id);
+            return "Guest Removed!";
+        }
 }

@@ -4,6 +4,7 @@ spring:
     username: HJ7BDDr16t
     password: n1wAMfHYbG
 
+
 #  jpa:
 #    generate-ddl: true
 #    hibernate:
