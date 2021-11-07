@@ -29,7 +29,6 @@ public class GuestService {
         return guestRepo.findByEmail(email);
     }
 
-
     public Guest addGuest(Guest guest){
         return guestRepo.save(guest);
     }
@@ -39,4 +38,11 @@ public class GuestService {
         return guestRepo.findAll();
 
     }
+
+    public void deleteGuestById(Long id){
+
+        guestRepo.deleteById(id);
+    }
+
+
 }

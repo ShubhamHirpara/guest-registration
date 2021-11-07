@@ -40,4 +40,15 @@ public class GuestRegistration {
         return guestService.fetchGuestList();
 
     }
+
+    // Add delete API here
+    public String deleteGuestById(Long id){
+
+        guestService.deleteGuestById(id);
+        return "Guest Removed!";
+    }
+
+
+
+
 }
